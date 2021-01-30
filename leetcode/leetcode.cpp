@@ -5,23 +5,30 @@ using namespace std;
 
 class Solution {
 public:
-   int lengthOfLongestSubstring(string s) {
-      unordered_set<char> unique_chars;
-      size_t result = 0;
-      for (size_t i = 0; i < s.size(); ++i)
+   string longestPalindrome(string s) {
+
+      for (size_t l = s.size(); l > 0; --l)
       {
-         unique_chars.clear();
-         for (size_t n = 0; n < s.size() - i; ++n)
+         for (size_t k = 0; k < s.size() - l; ++k)
          {
-            if (unique_chars.find(s[n + i]) != unique_chars.end())
+            if (isPalindrome(k, l + k, s))
             {
-               break;
+               return s.substr(k, l);
             }
-            unique_chars.insert(s[n + i]);
-            result = max(result, unique_chars.size());
          }
       }
-      return static_cast<int>(result);
+      return "";
+   }
+
+   static bool isPalindrome(size_t l, size_t r, const string& s)
+   {
+      while(l < r)
+      {
+         if (s[l] != s[r])
+            return false;
+         l++; r--;
+      }
+      return true;
    }
 };
 
