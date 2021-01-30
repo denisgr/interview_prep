@@ -1,52 +1,27 @@
 #include <iostream>
-
-struct ListNode {
-   int val;
-   ListNode* next;
-   ListNode() : val(0), next(nullptr) {}
-   ListNode(int x) : val(x), next(nullptr) {}
-   ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
+#include <string>
+#include <unordered_set>
+using namespace std;
 
 class Solution {
 public:
-   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-      int carry = 0;
-      auto* result = new ListNode(0);
-      auto* currentNode = result;
-      while (l1 != nullptr || l2 != nullptr || carry)
+   int lengthOfLongestSubstring(string s) {
+      unordered_set<char> unique_chars;
+      size_t result = 0;
+      for (size_t i = 0; i < s.size(); ++i)
       {
-         if (l1)
+         unique_chars.clear();
+         for (size_t n = 0; n < s.size() - i; ++n)
          {
-            currentNode->val += l1->val;
-            l1 = l1->next;
+            if (unique_chars.find(s[n + i]) != unique_chars.end())
+            {
+               break;
+            }
+            unique_chars.insert(s[n + i]);
+            result = max(result, unique_chars.size());
          }
-         if (l2)
-         {
-            currentNode->val += l2->val;
-            l2 = l2->next;
-         }
-         currentNode->val += carry;
-
-         if (currentNode->val > 9)
-         {
-            carry = 1;
-            currentNode->val %= 10;
-         }
-         else
-         {
-            carry = 0;
-         }
-         if (l1 || l2 || carry)
-         {
-            currentNode->next = new ListNode(0);
-            currentNode = currentNode->next;
-         }
-         else
-            currentNode->next = nullptr;
       }
-
-      return result;
+      return static_cast<int>(result);
    }
 };
 
