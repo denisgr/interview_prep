@@ -6,30 +6,55 @@ using namespace std;
 
 class Solution {
 public:
-   string convert(string s, int numRows) {
-      ostringstream oss;
-      for (size_t i = 0; i < numRows; ++i)
+   int myAtoi(string s) {
+      size_t i = 0;
+      bool isNegative = false;
+      while (true)
       {
-         int rowNumber = 0;
-         int increment = numRows != 1 ? 1 : 0;
-         size_t k = 0;
-         while (k < s.size())
+         if (s[i] == ' ')
          {
-            if (numRows != 1 && rowNumber == numRows - 1)
-            {
-               increment = -1;
-            }
-            else if (numRows != 1 && rowNumber == 0)
-               increment = 1;
-            if (rowNumber == i)
-            {
-               oss << s[k];
-            }
-            rowNumber += increment;
-            ++k;
+            ++i;
          }
+         else if (s[i] == '+')
+         {
+            ++i;
+            break;
+         }
+         else if (s[i] == '-')
+         {
+            ++i;
+            isNegative = true;
+            break;
+         }
+         else if (s[i] >= '0' && s[i] <= '9')
+         {
+            break;
+         }
+         else
+            return 0;
       }
-      return oss.str();
+
+      string lowest("2147483648"), highest("2147483647");
+      string oss;
+      while (i < s.size() && s[i] == '0')
+         ++i;
+      while (i < s.size() && s[i] >= '0' && s[i] <= '9')
+      {
+         oss += s[i];
+         ++i;
+      }
+
+      if (isNegative && (oss.size() > lowest.size() || (oss.size() == lowest.size() && oss > lowest)))
+         return -2147483648;
+      if (!isNegative && (oss.size() > highest.size() || (oss.size() == highest.size() && oss > highest)))
+         return 2147483647;
+
+      long long result = 0;
+      for (i = 0; i < oss.size(); ++i)
+      {
+         result = result * 10 + (oss[i] - '0');
+      }
+      return isNegative ? result * -1 : result;
    }
 };
 
