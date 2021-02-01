@@ -5,35 +5,65 @@
 #include <unordered_map>
 using namespace std;
 
+
+
+struct ListNode {
+   int val;
+   ListNode *next;
+   ListNode() : val(0), next(nullptr) {}
+   ListNode(int x) : val(x), next(nullptr) {}
+   ListNode(int x, ListNode *next) : val(x), next(next) {}
+ };
+ 
 class Solution {
 public:
-   vector<string> letterCombinations(string digits) {
-      unordered_map<char, string> digitToLettersMapping = { {'2', "abc"}, {'3', "def"}, {'4', "ghi"}, {'5', "jkl"}, {'6', "mno"}, {'7', "pqrs"}, {'8', "tuv"}, {'9', "wxyz"} };
+   ListNode* removeNthFromEnd(ListNode* head, int n) {
+      auto s = size(head);
+      if (s == 1)
+         return nullptr;
+      size_t index = 0;
+      ListNode* h = head;
+      if (n == s)
+      {
+         head = head->next;
+         return head;
+      }
+      while (index != s - n - 1)
+      {
+         h = h->next;
+         index++;
+      }
 
-      vector<string> res;
-      if (digits.empty())
-         return res;
-      getCombination(digitToLettersMapping, 0, digits, string(), res);
-      return res;
+      if (n == 1)
+      {
+         h->next = nullptr;
+      }
+      if (h->next && h->next->next)
+      {
+         h->next = h->next->next;
+      }
+
+      return head;
    }
 
-   void getCombination(const unordered_map<char, string>& m, size_t index, const string& digits, string word, vector<string>& result)
+   size_t size(ListNode* head)
    {
-      const auto c = digits[index];
-      const auto& letters = m.find(c);
-      for (char i : letters->second)
+      size_t size = 0;
+      while (head->next != nullptr)
       {
-         string w(word);
-         w.push_back(i);
-         if (index == digits.size() - 1)
-            result.push_back(w);
-         else
-            getCombination(m, index + 1, digits, w, result);
+         size++;
+         head = head->next;
       }
+      size++;
+      return size;
    }
 };
 
 int main()
 {
-
+   ListNode* h = new ListNode(1);
+   ListNode* h2 = new ListNode(2);
+   h->next = h2;
+   Solution s;
+   s.removeNthFromEnd(h, 1);
 }
