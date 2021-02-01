@@ -2,59 +2,34 @@
 #include <string>
 #include <unordered_set>
 #include <sstream>
+#include <unordered_map>
 using namespace std;
 
 class Solution {
 public:
-   int myAtoi(string s) {
-      size_t i = 0;
-      bool isNegative = false;
-      while (true)
+   vector<string> letterCombinations(string digits) {
+      unordered_map<char, string> digitToLettersMapping = { {'2', "abc"}, {'3', "def"}, {'4', "ghi"}, {'5', "jkl"}, {'6', "mno"}, {'7', "pqrs"}, {'8', "tuv"}, {'9', "wxyz"} };
+
+      vector<string> res;
+      if (digits.empty())
+         return res;
+      getCombination(digitToLettersMapping, 0, digits, string(), res);
+      return res;
+   }
+
+   void getCombination(const unordered_map<char, string>& m, size_t index, const string& digits, string word, vector<string>& result)
+   {
+      const auto c = digits[index];
+      const auto& letters = m.find(c);
+      for (char i : letters->second)
       {
-         if (s[i] == ' ')
-         {
-            ++i;
-         }
-         else if (s[i] == '+')
-         {
-            ++i;
-            break;
-         }
-         else if (s[i] == '-')
-         {
-            ++i;
-            isNegative = true;
-            break;
-         }
-         else if (s[i] >= '0' && s[i] <= '9')
-         {
-            break;
-         }
+         string w(word);
+         w.push_back(i);
+         if (index == digits.size() - 1)
+            result.push_back(w);
          else
-            return 0;
+            getCombination(m, index + 1, digits, w, result);
       }
-
-      string lowest("2147483648"), highest("2147483647");
-      string oss;
-      while (i < s.size() && s[i] == '0')
-         ++i;
-      while (i < s.size() && s[i] >= '0' && s[i] <= '9')
-      {
-         oss += s[i];
-         ++i;
-      }
-
-      if (isNegative && (oss.size() > lowest.size() || (oss.size() == lowest.size() && oss > lowest)))
-         return -2147483648;
-      if (!isNegative && (oss.size() > highest.size() || (oss.size() == highest.size() && oss > highest)))
-         return 2147483647;
-
-      long long result = 0;
-      for (i = 0; i < oss.size(); ++i)
-      {
-         result = result * 10 + (oss[i] - '0');
-      }
-      return isNegative ? result * -1 : result;
    }
 };
 
