@@ -1,69 +1,63 @@
+#include <algorithm>
 #include <iostream>
+#include <set>
 #include <string>
 #include <unordered_set>
 #include <sstream>
 #include <unordered_map>
 using namespace std;
 
-
-
-struct ListNode {
-   int val;
-   ListNode *next;
-   ListNode() : val(0), next(nullptr) {}
-   ListNode(int x) : val(x), next(nullptr) {}
-   ListNode(int x, ListNode *next) : val(x), next(next) {}
- };
  
 class Solution {
 public:
-   ListNode* removeNthFromEnd(ListNode* head, int n) {
-      auto s = size(head);
-      if (s == 1)
-         return nullptr;
-      size_t index = 0;
-      ListNode* h = head;
-      if (n == s)
+   vector<vector<int>> threeSum(vector<int>& nums) {
+      vector<int> nums_uniq;
+      sort(nums_uniq.begin(), nums_uniq.end());
+      nums_uniq.erase(unique(nums_uniq.begin(), nums_uniq.end()), nums_uniq.end());
+      if (nums_uniq.size() == 1 && nums.size() > 3)
       {
-         head = head->next;
-         return head;
-      }
-      while (index != s - n - 1)
-      {
-         h = h->next;
-         index++;
+         vector<int> r{ nums_uniq[0],nums_uniq[0],nums_uniq[0] };
+         return { r };
       }
 
-      if (n == 1)
+      unordered_map<int, vector<int>> nums_indexes;
+      for (size_t i = 0; i < nums.size(); ++i)
       {
-         h->next = nullptr;
+         auto& v = nums_indexes[nums[i]];
+         v.push_back(i);
       }
-      if (h->next && h->next->next)
+      set<vector<int>> res;
+      set<pair<int, int>> present_pairs;
+      for (size_t i = 0; i < nums.size(); ++i)
       {
-         h->next = h->next->next;
+         for (size_t n = i + 1; n < nums.size(); ++n)
+         {
+            if (present_pairs.find(make_pair(nums[i], nums[n])) != present_pairs.end())
+               continue;
+            present_pairs.insert(make_pair(nums[i], nums[n]));
+            auto iter = nums_indexes.find(0 - (nums[i] + nums[n]));
+            if (iter != nums_indexes.end())
+            {
+               auto& v = iter->second;
+               for (size_t l = 0; l < v.size(); ++l)
+               {
+                  if (v[l] > n)
+                  {
+                     vector<int> r{ nums[i], nums[n], nums[v[l]] };
+                     sort(r.begin(), r.end());
+                     res.insert(r);
+                  }
+               }
+            }
+         }
       }
-
-      return head;
-   }
-
-   size_t size(ListNode* head)
-   {
-      size_t size = 0;
-      while (head->next != nullptr)
-      {
-         size++;
-         head = head->next;
-      }
-      size++;
-      return size;
+      return vector<vector<int>>(res.begin(), res.end());
    }
 };
 
 int main()
 {
-   ListNode* h = new ListNode(1);
-   ListNode* h2 = new ListNode(2);
-   h->next = h2;
+   vector<int> t{ -4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6 };
    Solution s;
-   s.removeNthFromEnd(h, 1);
+   s.threeSum(t);
 }
