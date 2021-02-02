@@ -7,57 +7,39 @@
 #include <unordered_map>
 using namespace std;
 
- 
+
 class Solution {
 public:
-   vector<vector<int>> threeSum(vector<int>& nums) {
-      vector<int> nums_uniq;
-      sort(nums_uniq.begin(), nums_uniq.end());
-      nums_uniq.erase(unique(nums_uniq.begin(), nums_uniq.end()), nums_uniq.end());
-      if (nums_uniq.size() == 1 && nums.size() > 3)
-      {
-         vector<int> r{ nums_uniq[0],nums_uniq[0],nums_uniq[0] };
-         return { r };
-      }
-
-      unordered_map<int, vector<int>> nums_indexes;
+   vector<int> twoSum(vector<int>& nums, int target) {
+      unordered_map<int, vector<int>> nums_with_indexes;
       for (size_t i = 0; i < nums.size(); ++i)
       {
-         auto& v = nums_indexes[nums[i]];
+         auto& v = nums_with_indexes[target - nums[i]];
          v.push_back(i);
       }
-      set<vector<int>> res;
-      set<pair<int, int>> present_pairs;
-      for (size_t i = 0; i < nums.size(); ++i)
+
+      for (int i = 0; i < nums.size(); ++i)
       {
-         for (size_t n = i + 1; n < nums.size(); ++n)
+         auto iter = nums_with_indexes.find(nums[i]);
+         if (iter != nums_with_indexes.end())
          {
-            if (present_pairs.find(make_pair(nums[i], nums[n])) != present_pairs.end())
-               continue;
-            present_pairs.insert(make_pair(nums[i], nums[n]));
-            auto iter = nums_indexes.find(0 - (nums[i] + nums[n]));
-            if (iter != nums_indexes.end())
+            auto& v = iter->second;
+            for (int k = 0; k < v.size(); ++k)
             {
-               auto& v = iter->second;
-               for (size_t l = 0; l < v.size(); ++l)
+               if (v[k] != i)
                {
-                  if (v[l] > n)
-                  {
-                     vector<int> r{ nums[i], nums[n], nums[v[l]] };
-                     sort(r.begin(), r.end());
-                     res.insert(r);
-                  }
+                  return { i,v[k] };
                }
             }
          }
       }
-      return vector<vector<int>>(res.begin(), res.end());
+      return {};
    }
 };
 
 int main()
 {
-   vector<int> t{ -4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6 };
+   vector<int> v{ 3,2,4 };
    Solution s;
-   s.threeSum(t);
+   s.twoSum(v, 6);
 }
