@@ -32,5 +32,8 @@
     <ClInclude Include="Problem2_AddTwoNumbers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
