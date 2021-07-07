@@ -29,5 +29,8 @@
     <ClInclude Include="Problem21_MergeTwoSortedLists.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem2_AddTwoNumbers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
