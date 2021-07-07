@@ -23,5 +23,8 @@
     <ClInclude Include="Problem1_TwoSum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem20_ValidParentheses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
