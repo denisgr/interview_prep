@@ -26,5 +26,8 @@
     <ClInclude Include="Problem20_ValidParentheses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem21_MergeTwoSortedLists.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

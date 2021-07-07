@@ -15,10 +15,10 @@ public:
             continue;
          }
 
-         if (c == ']' && openedP.back() != '[' ||
+         if (openedP.empty() ||
+             c == ']' && openedP.back() != '[' ||
              c == ')' && openedP.back() != '(' ||
-             c == '}' && openedP.back() != '{' ||
-             openedP.empty())
+             c == '}' && openedP.back() != '{')
          {
             return false;
          }
