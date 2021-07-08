@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Problem11_ContainerWithMostWater.h" />
+    <ClInclude Include="Problem15_3Sum.h" />
     <ClInclude Include="Problem1_TwoSum.h" />
     <ClInclude Include="Problem20_ValidParentheses.h" />
     <ClInclude Include="Problem21_MergeTwoSortedLists.h" />

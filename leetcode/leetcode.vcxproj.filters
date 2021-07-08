@@ -41,5 +41,8 @@
     <ClInclude Include="Problem11_ContainerWithMostWater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem15_3Sum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
