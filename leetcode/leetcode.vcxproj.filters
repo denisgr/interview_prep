@@ -38,5 +38,8 @@
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem11_ContainerWithMostWater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
