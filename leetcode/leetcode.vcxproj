@@ -147,6 +147,7 @@
     <ClInclude Include="Problem21_MergeTwoSortedLists.h" />
     <ClInclude Include="Problem2_AddTwoNumbers.h" />
     <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h" />
+    <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

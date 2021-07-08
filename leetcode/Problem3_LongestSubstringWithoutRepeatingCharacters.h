@@ -7,19 +7,21 @@ public:
    int lengthOfLongestSubstring(std::string s) {
       using namespace std;
       unordered_set<char> uniqueChars;
-      int longestString = 0;
-      for (char& i : s)
+      int begin = 0, end = 0, longestSubstring = 0;
+      while (end != s.size() - 1)
       {
-         if (uniqueChars.count(i) == 0)
+         if (uniqueChars.count(s[end]) == 0)
          {
-            uniqueChars.insert(i);
+            uniqueChars.insert(s[end]);
+            end++;
          }
          else
          {
-            longestString = max(static_cast<int>(uniqueChars.size()), longestString);
-            uniqueChars.clear();
+            uniqueChars.erase(s[begin]);
+            begin++;
          }
+         longestSubstring = max(end - begin, longestSubstring);
       }
-      return longestString;
+      return longestSubstring;
    }
 };
