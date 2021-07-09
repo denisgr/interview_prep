@@ -44,5 +44,8 @@
     <ClInclude Include="Problem15_3Sum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem17_LetterCombinationsOfAPhoneNumber.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

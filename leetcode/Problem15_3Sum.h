@@ -22,7 +22,7 @@ public:
       {
          for (int k = i + 1; k < nums.size(); ++k)
          {
-            auto iter = indexes.find(nums[i] + nums[k]);
+            auto iter = indexes.find(-1 * (nums[i] + nums[k]));
             if (iter != indexes.end())
             {
                int index = -1;
