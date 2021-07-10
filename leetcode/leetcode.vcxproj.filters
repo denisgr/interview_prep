@@ -47,5 +47,17 @@
     <ClInclude Include="Problem17_LetterCombinationsOfAPhoneNumber.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem19_RemoveNthNodeFromEndOfList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem22_GenerateParentheses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem39_CombinationSum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem64_MinimumPathSum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

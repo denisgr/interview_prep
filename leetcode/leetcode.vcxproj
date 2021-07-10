@@ -145,12 +145,16 @@
     <ClInclude Include="Problem11_ContainerWithMostWater.h" />
     <ClInclude Include="Problem15_3Sum.h" />
     <ClInclude Include="Problem17_LetterCombinationsOfAPhoneNumber.h" />
+    <ClInclude Include="Problem19_RemoveNthNodeFromEndOfList.h" />
     <ClInclude Include="Problem1_TwoSum.h" />
     <ClInclude Include="Problem20_ValidParentheses.h" />
     <ClInclude Include="Problem21_MergeTwoSortedLists.h" />
+    <ClInclude Include="Problem22_GenerateParentheses.h" />
     <ClInclude Include="Problem2_AddTwoNumbers.h" />
+    <ClInclude Include="Problem39_CombinationSum.h" />
     <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h" />
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
+    <ClInclude Include="Problem64_MinimumPathSum.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
