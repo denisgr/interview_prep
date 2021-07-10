@@ -59,5 +59,14 @@
     <ClInclude Include="Problem64_MinimumPathSum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem78_Subsets.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem31_NextPermutation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem6_ZigZag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

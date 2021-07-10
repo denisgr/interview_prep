@@ -151,10 +151,13 @@
     <ClInclude Include="Problem21_MergeTwoSortedLists.h" />
     <ClInclude Include="Problem22_GenerateParentheses.h" />
     <ClInclude Include="Problem2_AddTwoNumbers.h" />
+    <ClInclude Include="Problem31_NextPermutation.h" />
     <ClInclude Include="Problem39_CombinationSum.h" />
     <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h" />
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
     <ClInclude Include="Problem64_MinimumPathSum.h" />
+    <ClInclude Include="Problem6_ZigZag.h" />
+    <ClInclude Include="Problem78_Subsets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
