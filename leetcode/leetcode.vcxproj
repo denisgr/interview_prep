@@ -150,10 +150,14 @@
     <ClInclude Include="Problem20_ValidParentheses.h" />
     <ClInclude Include="Problem21_MergeTwoSortedLists.h" />
     <ClInclude Include="Problem22_GenerateParentheses.h" />
+    <ClInclude Include="Problem297_SerializeAndDeserializeBinaryTree.h" />
     <ClInclude Include="Problem2_AddTwoNumbers.h" />
     <ClInclude Include="Problem31_NextPermutation.h" />
+    <ClInclude Include="Problem33_SearchInRotatedSortedArray.h" />
+    <ClInclude Include="Problem34_FindFirstAndLastPositionOfElementInSortedArray.h" />
     <ClInclude Include="Problem39_CombinationSum.h" />
     <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h" />
+    <ClInclude Include="Problem50_Pow.h" />
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
     <ClInclude Include="Problem64_MinimumPathSum.h" />
     <ClInclude Include="Problem6_ZigZag.h" />

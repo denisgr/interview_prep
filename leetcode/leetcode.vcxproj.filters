@@ -68,5 +68,17 @@
     <ClInclude Include="Problem6_ZigZag.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem50_Pow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem33_SearchInRotatedSortedArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem34_FindFirstAndLastPositionOfElementInSortedArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem297_SerializeAndDeserializeBinaryTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
