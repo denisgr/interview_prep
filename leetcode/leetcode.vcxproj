@@ -157,6 +157,7 @@
     <ClInclude Include="Problem34_FindFirstAndLastPositionOfElementInSortedArray.h" />
     <ClInclude Include="Problem39_CombinationSum.h" />
     <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h" />
+    <ClInclude Include="Problem45_JumpGame2.h" />
     <ClInclude Include="Problem46_Permutations.h" />
     <ClInclude Include="Problem50_Pow.h" />
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
