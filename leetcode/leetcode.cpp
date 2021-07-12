@@ -2,20 +2,12 @@
 //
 
 #include <iostream>
-#include "Problem297_SerializeAndDeserializeBinaryTree.h"
+#include "Problem46_Permutations.h"
 int main()
 {
-   Codec c;
-
-   TreeNode* t = new TreeNode(1);
-   /*t->left = new TreeNode(2);
-   t->right = new TreeNode(3);
-   auto tempNode = t->right;
-   tempNode->left = new TreeNode(4);
-   tempNode->right = new TreeNode(5);*/
-   t->left = nullptr;
-   t->right = new TreeNode(2);
-   t = c.deserialize(c.serialize(t));
+   Solution s;
+   std::vector<int> nums{ 1,2,3 };
+   s.permute(nums);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -157,10 +157,12 @@
     <ClInclude Include="Problem34_FindFirstAndLastPositionOfElementInSortedArray.h" />
     <ClInclude Include="Problem39_CombinationSum.h" />
     <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h" />
+    <ClInclude Include="Problem46_Permutations.h" />
     <ClInclude Include="Problem50_Pow.h" />
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
     <ClInclude Include="Problem64_MinimumPathSum.h" />
     <ClInclude Include="Problem6_ZigZag.h" />
+    <ClInclude Include="Problem763_PartitionLabels.h" />
     <ClInclude Include="Problem78_Subsets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
