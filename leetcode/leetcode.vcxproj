@@ -159,7 +159,12 @@
     <ClInclude Include="Problem3_LongestSubstringWithoutRepeatingCharacters.h" />
     <ClInclude Include="Problem45_JumpGame2.h" />
     <ClInclude Include="Problem46_Permutations.h" />
+    <ClInclude Include="Problem48_RotateImage.h" />
+    <ClInclude Include="Problem49_GroupAnagrams.h" />
     <ClInclude Include="Problem50_Pow.h" />
+    <ClInclude Include="Problem53_MaximumSubarray.h" />
+    <ClInclude Include="Problem55_JumpGame.h" />
+    <ClInclude Include="Problem56_MergeIntervals.h" />
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
     <ClInclude Include="Problem64_MinimumPathSum.h" />
     <ClInclude Include="Problem6_ZigZag.h" />

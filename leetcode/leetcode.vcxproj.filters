@@ -89,5 +89,20 @@
     <ClInclude Include="Problem45_JumpGame2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Problem48_RotateImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem49_GroupAnagrams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem53_MaximumSubarray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem55_JumpGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem56_MergeIntervals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

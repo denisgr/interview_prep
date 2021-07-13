@@ -6,17 +6,19 @@ class Solution {
 public:
    void rotate(std::vector<std::vector<int>>& matrix) {
       int offset = 0;
-      int sideLength = matrix.size() - 1;
+      int sideLength = matrix.size();
       while (sideLength > 1)
       {
-         for (int i = offset; i < sideLength; ++i)
+         for (int i = 0; i < sideLength - 1; ++i)
          {
-            int temp = matrix[offset][i];
-            matrix[offset][i] = matrix[sideLength - i][offset];
-            matrix[sideLength - i][offset] = matrix[sideLength - i][sideLength - i];
-            matrix[sideLength - i] [sideLength - i] = matrix[offset][sideLength - i];
-            matrix[offset][sideLength - i] = temp;
+            int temp = matrix[offset][i + offset];
+            matrix[offset][offset + i] = matrix[offset + sideLength - i - 1][offset];
+            matrix[offset + sideLength - i - 1][offset] = matrix[offset + sideLength - 1][offset + sideLength - i - 1];
+            matrix[offset + sideLength - 1][offset + sideLength - i - 1] = matrix[offset + i][offset + sideLength - 1];
+            matrix[offset + i][offset + sideLength - 1] = temp;
          }
+         sideLength-=2;
+         offset++;
       }
    }
 };
