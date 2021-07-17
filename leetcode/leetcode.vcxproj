@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -142,9 +142,13 @@
     <ClCompile Include="leetcode.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Problem101_SymmetricTree.h" />
+    <ClInclude Include="Problem102_BinaryTreeLevelOrderTraversal.h" />
+    <ClInclude Include="Problem104_MaximumDepthOfBinaryTree.h" />
     <ClInclude Include="Problem11_ContainerWithMostWater.h" />
     <ClInclude Include="Problem15_3Sum.h" />
     <ClInclude Include="Problem17_LetterCombinationsOfAPhoneNumber.h" />
+    <ClInclude Include="Problem18_4Sum.h" />
     <ClInclude Include="Problem19_RemoveNthNodeFromEndOfList.h" />
     <ClInclude Include="Problem1_TwoSum.h" />
     <ClInclude Include="Problem20_ValidParentheses.h" />
@@ -166,10 +170,20 @@
     <ClInclude Include="Problem55_JumpGame.h" />
     <ClInclude Include="Problem56_MergeIntervals.h" />
     <ClInclude Include="Problem5_LongestPalindromicSubstring.h" />
+    <ClInclude Include="Problem611_ValidTriangleNumber.h" />
+    <ClInclude Include="Problem62_UniquePaths.h" />
     <ClInclude Include="Problem64_MinimumPathSum.h" />
     <ClInclude Include="Problem6_ZigZag.h" />
+    <ClInclude Include="Problem70_ClimbingStairs.h" />
+    <ClInclude Include="Problem75_SortColors.h" />
     <ClInclude Include="Problem763_PartitionLabels.h" />
     <ClInclude Include="Problem78_Subsets.h" />
+    <ClInclude Include="Problem791_CustomSortString.h" />
+    <ClInclude Include="Problem79_WordSearch.h" />
+    <ClInclude Include="Problem927_ThreeEqualParts.h" />
+    <ClInclude Include="Problem94_BinaryTreeInorderTraversal.h" />
+    <ClInclude Include="Problem96_UniqueBinarySearchTrees.h" />
+    <ClInclude Include="Problem98_ValidateBinarySearchTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
